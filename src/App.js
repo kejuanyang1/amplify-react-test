@@ -26,7 +26,7 @@ const App = ({ user, signOut }) => {
   }, []);
 
   async function fetchNotes() {
-    const apiData = await API.graphql({ query: listNotes });
+    const apiData = await API.graphql({ query: listNotes, authMode: "AMAZON_COGNITO_USER_POOLS" });
     const notesFromAPI = apiData.data.listNotes.items;
     await Promise.all(
       notesFromAPI.map(async (note) => {
