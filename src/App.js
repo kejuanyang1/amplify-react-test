@@ -53,6 +53,7 @@ const App = ({ user, signOut }) => {
     await API.graphql({
       query: createNoteMutation,
       variables: { input: data },
+      authMode: "AMAZON_COGNITO_USER_POOLS" 
     });
     fetchNotes();
     event.target.reset();
@@ -65,6 +66,7 @@ const App = ({ user, signOut }) => {
     await API.graphql({
       query: deleteNoteMutation,
       variables: { input: { id } },
+      authMode: "AMAZON_COGNITO_USER_POOLS" 
     });
   }
 
