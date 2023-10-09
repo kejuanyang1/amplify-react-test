@@ -18,7 +18,7 @@ import {
   deleteNote as deleteNoteMutation,
 } from "./graphql/mutations";
 
-const App = ({ signOut }) => {
+const App = ({ user, signOut }) => {
   const [notes, setNotes] = useState([]);
 
   useEffect(() => {
@@ -126,7 +126,7 @@ const App = ({ signOut }) => {
           </Flex>
         ))}
       </View>
-      <Button onClick={signOut}>Sign Out</Button>
+      <Text>Logged in as <b>{user.username}</b><Button onClick={signOut}>Sign Out</Button></Text>
     </View>
   );
 };

@@ -1,10 +1,25 @@
 {
   "api": {
     "amplifyreacttest": {
-      "dependsOn": [],
+      "dependsOn": [
+        {
+          "attributes": [
+            "UserPoolId"
+          ],
+          "category": "auth",
+          "resourceName": "amplifyreacttestfbdb37fe"
+        }
+      ],
       "output": {
         "authConfig": {
-          "additionalAuthenticationProviders": [],
+          "additionalAuthenticationProviders": [
+            {
+              "authenticationType": "AMAZON_COGNITO_USER_POOLS",
+              "userPoolConfig": {
+                "userPoolId": "authamplifyreacttestfbdb37fe"
+              }
+            }
+          ],
           "defaultAuthentication": {
             "apiKeyConfig": {
               "apiKeyExpirationDays": 7
